@@ -18,6 +18,10 @@ public class Librari extends Application {
         root = new VBox();
     }
 
+    public void testStuff() {
+        
+    }
+
     @Override
     public void start(Stage stage) {
         scene = new Scene(root);
@@ -28,5 +32,6 @@ public class Librari extends Application {
         stage.setOnCloseRequest(event -> Platform.exit());
         stage.sizeToScene();
         stage.show();
+        testStuff();
     }
 }
