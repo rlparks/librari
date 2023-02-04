@@ -89,6 +89,14 @@ public class Book {
     }
 
     /**
+     * Returns the URL to the cover image of this book.
+     * @return the URL to the cover image of this book
+     */
+    public String getCoverUrl() {
+        return "https://covers.openlibrary.org/b/olid/" + this.olid + "-M.jpg";
+    }
+
+    /**
      * Prints all of the metadata of this book.
      */
     @Override
