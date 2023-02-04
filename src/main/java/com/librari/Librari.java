@@ -19,7 +19,11 @@ public class Librari extends Application {
     }
 
     public void testStuff() {
+        Book book1 = new Book("fantastic mr fox");
+        System.out.println(book1.toString());
         
+        Book book2 = new Book("lord of the rings");
+        System.out.println(book2.toString());
     }
 
     @Override

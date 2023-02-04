@@ -10,7 +10,7 @@ public class App {
         try {
             Application.launch(Librari.class, args);
         } catch (Exception e) {
-            System.err.println("Something went wrong! " + e.getMessage());
+            System.err.println("Something went wrong in the app! " + e.getMessage());
             System.exit(1);
         }
     }
