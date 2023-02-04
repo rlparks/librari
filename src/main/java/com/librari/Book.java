@@ -17,7 +17,7 @@ public class Book {
     String author = null;
     int year = -1;
     int pages = -1;
-    String olid = null;
+    String lccn = null;
 
     double progress = 0.0; // user % read
     File bookFile;
@@ -87,8 +87,8 @@ public class Book {
                 .get("number_of_pages_median")
                 .getAsInt();
 
-        this.olid = metadata
-                .get("edition_key")
+        this.lccn = metadata
+                .get("lccn")
                 .getAsJsonArray()
                 .get(0)
                 .getAsString();
@@ -100,7 +100,7 @@ public class Book {
      * @return the URL to the cover image of this book
      */
     public String getCoverUrl() {
-        return "https://covers.openlibrary.org/b/olid/" + this.olid + "-M.jpg";
+        return "https://covers.openlibrary.org/b/lccn/" + this.lccn + "-M.jpg";
     }
 
     /**
@@ -113,7 +113,7 @@ public class Book {
                         "Author: %s\n" +
                         "Year: %d\n" +
                         "Pages: %d\n" +
-                        "OLID: %s\n",
-                title, author, year, pages, olid);
+                        "LCCN: %s\n",
+                title, author, year, pages, lccn);
     }
 }
