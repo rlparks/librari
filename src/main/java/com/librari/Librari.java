@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Librari extends Application {
 
     ArrayList<Book> books;
-    Scene scene; 
+    Scene scene;
     VBox root;
 
     /**
@@ -37,7 +37,7 @@ public class Librari extends Application {
         File[] fileList = folder.listFiles();
         for (File file : fileList) {
             String bookName = file.getName().substring(0, file.getName().indexOf("."));
-            books.add(new Book(bookName));
+            books.add(new Book(bookName, file));
         }
     }
 
