@@ -16,8 +16,9 @@ import java.util.ArrayList;
 public class Librari extends Application {
 
     ArrayList<Book> books;
-    Scene scene;
+    Stage stage;
     VBox root;
+    Scene scene;
 
     /**
      * Initialize the elements of the scene graph.
@@ -25,12 +26,16 @@ public class Librari extends Application {
     @Override
     public void init() {
         loadBooks("./books");
-        root = new VBox(5);
-        // root.getChildren().add(new BookGrid());
+        root = new BookList(this);
+    }
 
-        // Reader reader = new Reader(this, books.get(4));
-        // root.getChildren().add(reader);
-        // VBox.setVgrow(reader, Priority.ALWAYS);
+    public void showReader(Book book) {
+        Scene newScene = new Scene(new Reader(this, book));
+        stage.setScene(newScene);
+    }
+
+    public void closeReader() {
+        stage.setScene(scene);
     }
 
     /**
@@ -51,6 +56,7 @@ public class Librari extends Application {
      */
     @Override
     public void start(Stage stage) {
+        this.stage = stage;
         scene = new Scene(root);
         stage.setTitle("librari");
         stage.setWidth(1280);

@@ -67,6 +67,10 @@ public class Reader extends VBox {
         VBox.setVgrow(bookText, Priority.ALWAYS);
         bookText.positionCaret(0);
 
+        backButton.setOnAction(e -> {
+            Platform.runLater(() -> app.closeReader());
+        });
+
         increaseFont.setOnAction(e -> {
             bookText.setFont(Font.font(bookText.getFont().getSize() + 2.5));
         });
