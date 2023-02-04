@@ -3,6 +3,7 @@ package com.librari;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -25,7 +26,11 @@ public class Librari extends Application {
     public void init() {
         loadBooks("./books");
         root = new VBox(5);
-        root.getChildren().add(new BookGrid());
+        // root.getChildren().add(new BookGrid());
+
+        // Reader reader = new Reader(this, books.get(4));
+        // root.getChildren().add(reader);
+        // VBox.setVgrow(reader, Priority.ALWAYS);
     }
 
     /**
@@ -48,8 +53,8 @@ public class Librari extends Application {
     public void start(Stage stage) {
         scene = new Scene(root);
         stage.setTitle("librari");
-        stage.setMaxWidth(640);
-        stage.setMaxHeight(480);
+        stage.setWidth(1280);
+        stage.setHeight(720);
         stage.setScene(scene);
         stage.setOnCloseRequest(event -> Platform.exit());
         stage.sizeToScene();
