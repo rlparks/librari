@@ -37,16 +37,16 @@ $ git clone https://github.com/rlparks/librari.git
 
 ### Scope/Goals
 
-* Responsive and easy-to-use UI
-* Built-in e-book reader with progress tracker
-* Easily acquire Title, Author, Year, Page No., etc. about books
-* Cache book data to limit API calls
+* ✅ Responsive and easy-to-use UI
+* ✅ Built-in e-book reader
+* ✅ Progress tracker
+* ✅ Easily acquire Title, Author, Year, Page No., etc. about books
+* ✅ Limit number of API calls to once per program run
 
 ### Limitations
 
 * Inconvenient to find and parse .epub files, so we are using .txt mock-ups
-* Open Library API data is inconsistently entered, which can make covers appear
-in different languages
+* Open Library API does not have covers for all titles in database
 * Time consuming to style UI according to our mock-up
 
 ### Mockups
