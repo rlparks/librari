@@ -18,11 +18,24 @@ public class Book {
     int pages = -1;
     String olid = null;
 
+    /**
+     * Returns a Book whose metadata is based on the search results
+     * obtained when searching for rawTitle.
+     * 
+     * @param rawTitle the rough title of the book, spaces okay
+     */
     public Book(String rawTitle) {
         JsonObject results = query(rawTitle);
         updateMetadata(results);
     }
 
+    /**
+     * Queries the Open Library API using the rawTitle search term, and
+     * returns a JsonObject containing the entire book's metadata.
+     * 
+     * @param rawTitle the rough title of the book, spaces okay
+     * @return the entire book's metadata in JSON form
+     */
     public JsonObject query(String rawTitle) {
         try {
             String sUrl = SEARCH_ENDPOINT + rawTitle.replaceAll(" ", "+");
@@ -36,6 +49,12 @@ public class Book {
         return null;
     }
 
+    /**
+     * Updates the metadata fields of this Book using the JSON data
+     * specified by results
+     * 
+     * @param results the JSON data used to update this Book
+     */
     public void updateMetadata(JsonObject results) {
             // Parse through results to get the book's OLID
             JsonObject metadata = results
@@ -69,6 +88,9 @@ public class Book {
                 .getAsString();
     }
 
+    /**
+     * Prints all of the metadata of this book.
+     */
     @Override
     public String toString() {
         return String.format(

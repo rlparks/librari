@@ -12,24 +12,33 @@ import javafx.stage.Stage;
 public class Librari extends Application { 
     Scene scene; 
     VBox root;
-    
+
+    /**
+     * Method used for testing Library API; will remove later.
+     */
+    public void testStuff() {
+        Book book1 = new Book("fantastic mr fox");
+        System.out.println(book1.toString());
+
+        Book book2 = new Book("lord of the rings");
+        System.out.println(book2.toString());
+    }
+
+    /**
+     * Initialize the elements of the scene graph.
+     */
     @Override
     public void init() {
         root = new VBox();
     }
 
-    public void testStuff() {
-        Book book1 = new Book("fantastic mr fox");
-        System.out.println(book1.toString());
-        
-        Book book2 = new Book("lord of the rings");
-        System.out.println(book2.toString());
-    }
-
+    /**
+     * Initialize the scene and stage of the JavaFX app.
+     */
     @Override
     public void start(Stage stage) {
         scene = new Scene(root);
-        stage.setTitle("Librari");
+        stage.setTitle("librari");
         stage.setMaxWidth(640);
         stage.setMaxHeight(480);
         stage.setScene(scene);
