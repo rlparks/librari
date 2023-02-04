@@ -2,6 +2,10 @@ package com.librari;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import javafx.application.Platform;
@@ -43,7 +47,7 @@ public class Reader extends VBox {
         topBar = new VBox();
         topMenu = new HBox();
 
-        percentReadIndicator = new ProgressBar(0.5);
+        percentReadIndicator = new ProgressBar(0.0);
         percentReadIndicator.setMaxWidth(Double.MAX_VALUE);
         topBar.getChildren().addAll(topMenu, percentReadIndicator);
 
@@ -61,9 +65,15 @@ public class Reader extends VBox {
         topMenu.getChildren().addAll(backButton, leftSep, titleText, rightSep, increaseFont, decreaseFont);
 
         TextArea bookText = new TextArea();
+        try {
+            bookText.setText(new String(Files.readAllBytes(Paths.get(book.bookFile.getPath())), StandardCharsets.UTF_8));
+        } catch (IOException ie) {
+            bookText.setText("");
+        }
         bookText.setWrapText(true);
         bookText.setEditable(false);
-        initText(bookText, currentBook.bookFile);
+        //initText(bookText, currentBook.bookFile);
+
         VBox.setVgrow(bookText, Priority.ALWAYS);
         bookText.positionCaret(0);
 
