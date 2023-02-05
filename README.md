@@ -7,16 +7,17 @@ track your reading progress, and compile information about your collection.
 
 ### Requirements
 
-* Java 11+
-* Visual Studio Code
-* Extension Pack for Java v0.25.7
+-   Java 11+
+-   Visual Studio Code
+-   Extension Pack for Java v0.25.7
 
 ### How to Build
 
 1. Make sure that both the `JAVA_HOME` environment variable and `maven.executable.path` VS Code
-setting are set to point to your versions of Java and Maven, respectively.
+   setting are set to point to your versions of Java and Maven, respectively.
 
 Example:
+
 ```
 JAVA_HOME=C:\Program Files\Java\jdk-19
 
@@ -37,18 +38,18 @@ $ git clone https://github.com/rlparks/librari.git
 
 ### Scope/Goals
 
-* ✅ Responsive and easy-to-use UI
-* ✅ Built-in e-book reader
-* ✅ Progress tracker
-* ✅ Easily acquire Title, Author, Year, Page No., etc. about books
-* ✅ Limit number of API calls to once per program run
+-   ✅ Responsive and easy-to-use UI
+-   ✅ Built-in e-book reader
+-   ✅ Progress tracker
+-   ✅ Easily acquire Title, Author, Year, Page No., etc. about books
+-   ✅ Limit number of API calls to once per program run
 
 ### Limitations
 
-* Inconvenient to find and parse .epub files, so we are using .txt mock-ups
-* Open Library API does not have covers for all titles in database
-* Time consuming to style UI according to our mock-up
+-   Inconvenient to find and parse .epub files, so we are using .txt mock-ups
+-   Open Library API does not have covers for all titles in database
+-   Time consuming to style UI according to our mock-up
 
-### Mockups
+### Mockup
 
-**TODO: Add Mockup Images When Finished**
+![Mockup image, showing rows of book covers](mockup.jpg)
