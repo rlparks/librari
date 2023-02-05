@@ -22,8 +22,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.text.Font;
 
 public class Reader extends VBox {
@@ -66,13 +64,14 @@ public class Reader extends VBox {
 
         TextArea bookText = new TextArea();
         try {
-            bookText.setText(new String(Files.readAllBytes(Paths.get(book.bookFile.getPath())), StandardCharsets.UTF_8));
+            bookText.setText(
+                    new String(Files.readAllBytes(Paths.get(book.bookFile.getPath())), StandardCharsets.UTF_8));
         } catch (IOException ie) {
             bookText.setText("");
         }
         bookText.setWrapText(true);
         bookText.setEditable(false);
-        //initText(bookText, currentBook.bookFile);
+        // initText(bookText, currentBook.bookFile);
 
         VBox.setVgrow(bookText, Priority.ALWAYS);
         bookText.positionCaret(0);
